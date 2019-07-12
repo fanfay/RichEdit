@@ -1,0 +1,117 @@
+[
+    {
+        "action": "blod",
+        "image": "bold",
+        "selectImage": "bold-light",
+    },
+    {
+        "action": "size",
+        "image": "font-size",
+        "selectImage": "font-size-light",
+    },
+    {
+        "action": "italic",
+        "image": "italic",
+        "selectImage": "italic-light",
+    },
+    {
+        "action": "underline",
+        "image": "underline",
+        "selectImage": "underline-light",
+    },
+    {
+        "action": "strike",
+        "image": "strikethrough",
+        "selectImage": "strikethrough-light",
+    },
+    {
+        "action": "code-block",
+        "image": "code-view",
+        "selectImage": "code-view-light",
+    },
+    {
+        "action": "blockquote",
+        "image": "double-quotes-r",
+        "selectImage": "double-quotes-r-light",
+    },
+    {
+        "action": "sub",
+        "image": "subscript",
+        "selectImage": "subscript-light",
+    },
+    {
+        "action": "super",
+        "image": "superscript",
+        "selectImage": "superscript-light",
+    },
+    {
+        "action": "background",
+        "image": "font-bg-color",
+        "selectImage": "font-bg-color-light",
+    },
+    {
+        "action": "color",
+        "image": "font-color",
+        "selectImage": "font-color-light",
+    },
+    {
+        "action": "header",
+        "image": "heading",
+        "selectImage": "heading-light",
+    },
+    {
+        "action": "bullet",
+        "image": "list-check",
+        "selectImage": "list-check-light",
+    },
+    {
+        "action": "ordered",
+        "image": "list-ordered",
+        "selectImage": "list-ordered-light",
+    },
+    {
+        "action": "indent-decrease",
+        "image": "indent-decrease",
+        "selectImage": "indent-decrease-light",
+    },
+    {
+        "action": "indent-increase",
+        "image": "indent-increase",
+        "selectImage": "indent-increase-light",
+    },
+    {
+        "action": "left",
+        "image": "align-left",
+        "selectImage": "align-left-light",
+    },
+    {
+        "action": "center",
+        "image": "align-center",
+        "selectImage": "align-center-light",
+    },
+    {
+        "action": "right",
+        "image": "align-right",
+        "selectImage": "align-right-light",
+    },
+    {
+        "action": "image",
+        "image": "image-plus",
+        "selectImage": "image-plus-light",
+    },
+    {
+        "action": "undo",
+        "image": "navigate-left",
+        "selectImage": "navigate-left-light",
+    },
+    {
+        "action": "redo",
+        "image": "navigate-right",
+        "selectImage": "navigate-right-light",
+    },
+    {
+        "action": "format-clear",
+        "image": "format-clear",
+        "selectImage": "format-clear-light",
+    },
+]

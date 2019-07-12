@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+        <!-- 引入样式文件 -->
+<!--        <link href="https://cdn.quilljs.com/1.3.4/quill.snow.css" rel="stylesheet">-->
+<!--        <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.4/quill.core.css">-->
+        <link href="./quill.css" rel="stylesheet">
+            
+        <style type="text/css">
+            body{
+                margin-bottom: 40px;
+            }
+        
+            img{
+                width: 100%;
+            }
+            #editor{
+                background: #F7F7F7;
+                border: none;
+                overflow-y: auto
+            }
+        </style>
+    </head>
+    
+    <body>
+        <!-- 创建一个编辑器容器 -->
+        <div id="editor" style="border: none;"></div>
+    </body>
+    
+
+    <!-- 引入Quill库文件 -->
+<!--    <script src="https://cdn.quilljs.com/1.3.4/quill.js"></script>-->
+
+    <script src="./quill.js"></script>
+
+    <!-- 初始化Quill编辑器 -->
+    <script>
+                      
+        var quill = new Quill('#editor', {
+                              placeholder: 'Compose an epic...',
+                              theme: 'snow',
+                              modules: {
+                                  toolbar: false,
+                                  history: {
+                                      delay: 2000,
+                                      maxStack: 500,
+                                      userOnly: true
+                                  }
+                              },
+                        });
+                        
+    </script>
+    <script src="./main.js"></script>
+
+</html>
+
+
+
+    
+
