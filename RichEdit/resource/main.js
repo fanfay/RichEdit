@@ -15,6 +15,11 @@ quill.on("editor-change", event => {
     window.sendMessage('actions', quill.getFormat())
 });
 
+quill.on("selection-change", event => {
+    window.sendMessage('logger', 'selection-change')
+    let topPosition = window.getCaretYPosition()
+});
+
 // 失去焦点
 function blur() {
     quill.blur()

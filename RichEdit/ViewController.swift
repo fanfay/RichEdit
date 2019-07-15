@@ -36,6 +36,7 @@ class ViewController: UIViewController {
         config.preferences = preferences
         let webView = WKWebView.init(frame: CGRect.zero, configuration: config)
         FauxBarHelper().removeInputAccessoryView(webView: webView)
+        webView.frame = self.view.bounds
         return webView;
     }()
 
@@ -65,7 +66,6 @@ class ViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        webView.frame = self.view.bounds
     }
 
     func loadHTML(){
@@ -75,9 +75,8 @@ class ViewController: UIViewController {
         guard let url = URL(string: path) else {
             return
         }
-        
-        let request = URLRequest(url: url)
-        webView.load(request);
+        let urlString = try? String(contentsOf: url, encoding: String.Encoding.utf8)
+        webView.loadHTMLString(urlString!, baseURL: url)
     }
     
     func setNavigationBarItems() {
@@ -100,8 +99,12 @@ class ViewController: UIViewController {
         // 2.获取键盘最终 Y值
         let endFrame = (notifocation.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         let y = endFrame.origin.y
+        
+        self.webView.frame = CGRect(x: 0, y: 0, width: self.width, height: y < self.height ?  y - 44 : height)
+        
         UIView.animate(withDuration: duration, animations: {
             self.editToolBar.frame = CGRect(x: 0, y: y < self.height ? y-44 : y, width: self.width, height: 44)
+            
         }) { (complete) in
         }
     }
