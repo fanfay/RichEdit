@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D5526DE826048349006B29FB /* UIView+Debugging.m in Sources */ = {isa = PBXBuildFile; fileRef = D5526DE726048349006B29FB /* UIView+Debugging.m */; };
+		D5526DEB260486FB006B29FB /* RichEditorWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5526DEA260486FB006B29FB /* RichEditorWebView.swift */; };
 		D56D303C22D46780007ADF5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D303B22D46780007ADF5C /* AppDelegate.swift */; };
 		D56D303E22D46780007ADF5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56D303D22D46780007ADF5C /* ViewController.swift */; };
 		D56D304122D46780007ADF5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D56D303F22D46780007ADF5C /* Main.storyboard */; };
@@ -34,6 +36,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D5526DE526048349006B29FB /* RichEdit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RichEdit-Bridging-Header.h"; sourceTree = "<group>"; };
+		D5526DE626048349006B29FB /* UIView+Debugging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Debugging.h"; sourceTree = "<group>"; };
+		D5526DE726048349006B29FB /* UIView+Debugging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Debugging.m"; sourceTree = "<group>"; };
+		D5526DEA260486FB006B29FB /* RichEditorWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichEditorWebView.swift; sourceTree = "<group>"; };
 		D56D303822D46780007ADF5C /* RichEdit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RichEdit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56D303B22D46780007ADF5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D56D303D22D46780007ADF5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -99,11 +105,14 @@
 				D56D303D22D46780007ADF5C /* ViewController.swift */,
 				D56D334B22D86CE7007ADF5C /* PreviewViewController.swift */,
 				D56D331122D47044007ADF5C /* WeakScriptMessageDelegate.swift */,
+				D5526DE626048349006B29FB /* UIView+Debugging.h */,
+				D5526DE726048349006B29FB /* UIView+Debugging.m */,
 				D56D303F22D46780007ADF5C /* Main.storyboard */,
 				D56D331522D58119007ADF5C /* EditAction.json */,
 				D56D304222D46780007ADF5C /* Assets.xcassets */,
 				D56D304422D46780007ADF5C /* LaunchScreen.storyboard */,
 				D56D304722D46780007ADF5C /* Info.plist */,
+				D5526DE526048349006B29FB /* RichEdit-Bridging-Header.h */,
 			);
 			path = RichEdit;
 			sourceTree = "<group>";
@@ -112,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				D56D331322D490DC007ADF5C /* EditToolBar.swift */,
+				D5526DEA260486FB006B29FB /* RichEditorWebView.swift */,
 			);
 			path = custom;
 			sourceTree = "<group>";
@@ -209,6 +219,7 @@
 				TargetAttributes = {
 					D56D303722D46780007ADF5C = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1230;
 					};
 				};
 			};
@@ -259,6 +270,7 @@
 				D56D331422D490DC007ADF5C /* EditToolBar.swift in Sources */,
 				D56D331222D47044007ADF5C /* WeakScriptMessageDelegate.swift in Sources */,
 				D56D334A22D8570C007ADF5C /* UIImage+Base64.swift in Sources */,
+				D5526DE826048349006B29FB /* UIView+Debugging.m in Sources */,
 				D56D332B22D82D3F007ADF5C /* EFColorComponentView.swift in Sources */,
 				D56D333122D82D3F007ADF5C /* EFRGBView.swift in Sources */,
 				D56D333A22D83021007ADF5C /* UIColor+Hex.swift in Sources */,
@@ -266,6 +278,7 @@
 				D56D333322D82D3F007ADF5C /* EFColorView.swift in Sources */,
 				D56D333422D82D3F007ADF5C /* EFThumbView.swift in Sources */,
 				D56D332E22D82D3F007ADF5C /* EFColorSelectionView.swift in Sources */,
+				D5526DEB260486FB006B29FB /* RichEditorWebView.swift in Sources */,
 				D56D334C22D86CE7007ADF5C /* PreviewViewController.swift in Sources */,
 				D56D303C22D46780007ADF5C /* AppDelegate.swift in Sources */,
 				D56D332C22D82D3F007ADF5C /* EFHSBView.swift in Sources */,
@@ -414,6 +427,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N36QML33YE;
 				INFOPLIST_FILE = RichEdit/Info.plist;
@@ -421,8 +435,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fay.www.RichEdit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fay.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RichEdit/RichEdit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,6 +448,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N36QML33YE;
 				INFOPLIST_FILE = RichEdit/Info.plist;
@@ -439,8 +456,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.fay.www.RichEdit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.fay.www;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "RichEdit/RichEdit-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

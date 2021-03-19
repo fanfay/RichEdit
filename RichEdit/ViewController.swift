@@ -9,6 +9,9 @@
 import UIKit
 import WebKit
 
+
+
+
 class ViewController: UIViewController {
 
     var width: CGFloat {
@@ -34,8 +37,9 @@ class ViewController: UIViewController {
         
         config.userContentController = userContentController
         config.preferences = preferences
-        let webView = WKWebView.init(frame: CGRect.zero, configuration: config)
-        FauxBarHelper().removeInputAccessoryView(webView: webView)
+        let webView = RichEditorWebView.init(frame: CGRect.zero, configuration: config)
+// fix ios14 crash
+//        FauxBarHelper().removeInputAccessoryView(webView: webView)
         webView.frame = self.view.bounds
         return webView;
     }()
